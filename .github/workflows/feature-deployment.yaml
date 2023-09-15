@@ -1,0 +1,46 @@
+name: Feature deployment
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  CI:
+    uses: ./.github/workflows/feature-code-review.yml
+
+  terraform:
+    name: Provisioning with Terraform
+    runs-on: ubuntu-22.04
+
+    env:
+      TF_VAR_cloudflare_api_token: ${{ secrets.TF_VAR_CLOUDFLARE_API_TOKEN }}
+      TF_VAR_cloudflare_zone_id: ${{ secrets.TF_VAR_CLOUDFLARE_ZONE_ID }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Terraform init
+        working-directory: ./terraform
+        run: terraform init -backend-config="conn_str=${{ secrets.TERRAFORM_PG_CONNECTION }}" -input=false
+
+      - name: Terraform validation
+        working-directory: ./terraform
+        run: terraform validate
+
+      - name: Terraform plan
+        working-directory: ./terraform
+        run: terraform plan -input=false
+
+      - name: Terraform apply
+        working-directory: ./terraform
+        run: terraform apply -auto-approve -input=false
+
+  Deployment:
+    name: Render Deployment
+    runs-on: ubuntu-22.04
+    needs: [CI, terraform]
+
+    steps:
+      - name: Trigger deployment on render.com
+        run: curl -s ${{ secrets.RENDER_DEPLOY_HOOK_URL }} -o /dev/null

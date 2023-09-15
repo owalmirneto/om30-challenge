@@ -1,0 +1,26 @@
+version: "3.9"
+
+name: "rails-challenge"
+
+services:
+  web:
+    build: .
+    command: bin/rails server -b 0.0.0.0
+    env_file:
+      - .env
+    volumes:
+      - .:/rails-challenge
+    links:
+      - postgres
+    ports:
+      - "3000:3000"
+
+  postgres:
+    image: postgres:15.1-bullseye
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./tmp/postgresql-data:/var/lib/postgresql/data

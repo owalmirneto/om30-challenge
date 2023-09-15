@@ -1,0 +1,144 @@
+name: Feature code review
+
+on:
+  workflow_call:
+
+  pull_request:
+    branches: [main]
+
+env:
+  RAILS_ENV: test
+
+jobs:
+  brakeman:
+    name: Brakeman
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler: default
+          ruby-version: 3.2.2
+          bundler-cache: true
+
+      - name: brakeman
+        uses: reviewdog/action-brakeman@v2
+        with:
+          brakeman_version: 6.0.1
+
+  rubocop:
+    name: RuboCop
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler: default
+          ruby-version: 3.2.2
+          bundler-cache: true
+
+      - name: Rubocop with ReviewDog
+        uses: reviewdog/action-rubocop@v2
+        with:
+          rubocop_version: gemfile
+
+  erblint:
+    name: ERB Lint
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler: default
+          ruby-version: 3.2.2
+          bundler-cache: true
+
+      - name: Install bundler
+        run: gem install bundler --no-document && bundler check || bundler install
+
+      - name: Run ERB Lint
+        run: bin/erblint app/views --format compact
+
+  rspec:
+    name: RSpec
+    runs-on: ubuntu-22.04
+
+    env:
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/rails_challenge_test
+
+    services:
+      db:
+        image: postgres:15.1-bullseye
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler: default
+          ruby-version: 3.2.2
+          bundler-cache: true
+
+      - name: Verify ruby version
+        run: ruby --version
+
+      - name: Copy .env
+        run: cp .env.example .env
+
+      - name: Install bundler
+        run: gem install bundler --no-document && bundler check || bundler install
+
+      - name: Precompile assets
+        run: yarn install && yarn build && yarn build:css
+
+      - name: Prepare database
+        run: bin/rails db:setup db:test:prepare db:schema:load db:migrate --trace RAILS_ENV=test
+
+      - name: Run RSpec
+        run: bin/rspec
+
+  eslint:
+    name: ESLint
+    runs-on: ubuntu-22.04
+
+    env:
+      NODE_ENV: test
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Lint runner
+        run: bin/eslint

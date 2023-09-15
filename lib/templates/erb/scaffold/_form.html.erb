@@ -1,0 +1,13 @@
+<%%= simple_form_for(@<%= singular_table_name %>) do |f| %>
+  <div class="row">
+  <%- attributes.each do |attribute| -%>
+    <div class="col-sm-4">
+      <%%= f.<%= attribute.reference? ? :association : :input %>(:<%= attribute.name %>) %>
+    </div>
+  <%- end -%>
+  </div>
+
+  <div class="text-end">
+    <%%= f.button(:submit, class: "btn btn-primary") %>
+  </div>
+<%% end %>
