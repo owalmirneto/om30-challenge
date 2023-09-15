@@ -3,10 +3,10 @@ variable "cloudflare_zone_id" {
   sensitive = true
 }
 
-resource "cloudflare_record" "rails-challenge" {
+resource "cloudflare_record" "om30-challenge" {
   zone_id = var.cloudflare_zone_id
-  name = "rails-challenge"
-  value = "rails-challenge.onrender.com"
+  name = "om30-challenge"
+  value = "om30-challenge.onrender.com"
   type = "CNAME"
   proxied = true
 }
