@@ -17,6 +17,8 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 # https://github.com/rails/jsbundling-rails#javascript-bundling-for-rails
 gem "jsbundling-rails", "~> 1.2"
+# https://github.com/rails/cssbundling-rails#installation
+gem "cssbundling-rails", "~> 1.3"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]

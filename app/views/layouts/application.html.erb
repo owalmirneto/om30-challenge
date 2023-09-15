@@ -6,8 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag("application", "data-turbo-track": "reload") %>
+    <%= javascript_include_tag("application", "data-turbo-track": "reload", defer: true) %>
 
     <%= favicon_link_tag("icon.png") %>
   </head>
@@ -15,7 +15,7 @@
   <body class="min-vh-100 d-flex flex-column">
     <%= render("layouts/navbar") %>
 
-    <main id="app" class="flex-grow-1">
+    <main id="app" class="flex-grow-1 mt-3">
       <div class="container">
         <%= yield %>
       </div>
