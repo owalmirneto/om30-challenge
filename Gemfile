@@ -53,13 +53,15 @@ group :development, :test do
   gem "factory_bot_rails", "~> 6.2"
   # https://github.com/stympy/faker
   gem "faker", "~> 3.2"
+  # https://github.com/bernardo/cpf_faker#usage-
+  gem "cpf_faker", "~> 1.3"
+  # https://github.com/thoughtbot/shoulda-matchers
+  gem "shoulda-matchers", "~> 5.3"
 end
 
 group :test do
   # https://github.com/rspec/rspec-rails#installation
   gem "rspec-rails", "~> 6.0"
-  # https://github.com/thoughtbot/shoulda-matchers
-  gem "shoulda-matchers", "~> 5.3"
   # https://github.com/DatabaseCleaner/database_cleaner
   gem "database_cleaner", "~> 2.0"
   # https://github.com/teamcapybara/capybara#setup
