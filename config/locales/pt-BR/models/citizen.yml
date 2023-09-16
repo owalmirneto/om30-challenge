@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      citizen:
+        one: "Munícipe"
+        other: "Munícipes"
+    attributes:
+      citizen:
+        name: "Nome"
+        cpf: "CPF"
+        cns: "CNS"
+        email: "E-mail"
+        born_in: "Nascimento"
+        phone: "Telefone"
+        enabled: "Ativo?"

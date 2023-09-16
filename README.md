@@ -14,7 +14,7 @@ Crie um CRUD de munícipes (Exceto deletar). O munícipe tem status ativo e inat
 
     1.2 Todos os dados do munícipe são obrigatórios;
 
-    1.3 `CPF, CNS,Email` devem ser válidos;
+    1.3 `CPF, CNS, Email` devem ser válidos;
 
     1.4 Tenha atenção a data de nascimento. Valide os casos impossíveis/improváveis de serem válidos;
 

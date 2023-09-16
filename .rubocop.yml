@@ -26,6 +26,9 @@ Metrics/BlockLength:
     - config/routes.rb
     - config/initializers/form_ease_bootstrap.rb
 
+RSpec/Rails/NegationBeValid:
+  EnforcedStyle: be_invalid
+
 RSpec/PendingWithoutReason:
   Enabled: false
 
