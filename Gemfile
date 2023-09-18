@@ -86,3 +86,5 @@ gem "interactor-rails", "~> 2.2"
 gem "ows-queries", "~> 0.1.6"
 # https://github.com/rails-api/active_model_serializers/tree/0-10-stable#getting-started
 gem "active_model_serializers", "~> 0.10.13"
+# https://github.com/sidekiq/sidekiq/wiki/Getting-Started
+gem "sidekiq", "~> 7.1"

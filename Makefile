@@ -1,16 +1,20 @@
 setup:
 	test -f .env || cp .env.example .env;
-	make up-database;
+	docker-compose up postgres -d;
 	bin/setup;
 	make dbreseed dbprepare;
 	docker-compose down;
 
-up-database:
-	docker-compose up postgres -d;
+up:
+	docker-compose up -d;
 
 start:
-	docker-compose up postgres -d;
+	docker-compose up postgres redis sidekiq -d;
 	bin/dev;
+
+server:
+	docker-compose up postgres redis sidekiq -d;
+	bin/rails server;
 
 dbreseed:
 	bin/rails db:drop db:create db:migrate db:seed --trace RAILS_ENV=development;
