@@ -9,3 +9,6 @@ application.register("addresses", AddressesController)
 
 import HomeController from "./home_controller"
 application.register("home", HomeController)
+
+import MasksController from "./masks_controller"
+application.register("masks", MasksController)
