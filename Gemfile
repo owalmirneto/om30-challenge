@@ -53,13 +53,15 @@ group :development, :test do
   gem "factory_bot_rails", "~> 6.2"
   # https://github.com/stympy/faker
   gem "faker", "~> 3.2"
+  # https://github.com/bernardo/cpf_faker#usage-
+  gem "cpf_faker", "~> 1.3"
+  # https://github.com/thoughtbot/shoulda-matchers
+  gem "shoulda-matchers", "~> 5.3"
 end
 
 group :test do
   # https://github.com/rspec/rspec-rails#installation
   gem "rspec-rails", "~> 6.0"
-  # https://github.com/thoughtbot/shoulda-matchers
-  gem "shoulda-matchers", "~> 5.3"
   # https://github.com/DatabaseCleaner/database_cleaner
   gem "database_cleaner", "~> 2.0"
   # https://github.com/teamcapybara/capybara#setup
@@ -72,3 +74,11 @@ end
 
 # http://github.com/owalmirneto/form_ease
 gem "form_ease", "~> 0.0.3"
+# https://github.com/owalmirneto/cns_brazil#usage
+gem "cns_brazil", github: "owalmirneto/cns_brazil"
+# https://github.com/owalmirneto/enuminator#using-with-rails
+gem "enuminator", "~> 0.0.3"
+# https://github.com/collectiveidea/interactor-rails#usage
+gem "interactor-rails", "~> 2.2"
+# https://github.com/owalmirneto/queries#usage
+gem "ows-queries", "~> 0.1.6"

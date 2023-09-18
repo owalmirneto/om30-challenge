@@ -1,0 +1,47 @@
+<%= simple_form_for(citizen) do |form| %>
+  <div class="card mb-3">
+    <div class="card-header">
+      <h4 class="m-0"><%= t(".info") %></h4>
+    </div>
+
+    <div class="card-body">
+      <%= form.input(:name) %>
+
+      <div class="row">
+        <div class="col-6"><%= form.input(:email) %></div>
+
+        <div class="col-6">
+          <%= form.input(:phone, input_html: { data: { mask: "phone" } }) %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          <%= form.input(:cns, input_html: { data: { mask: "cns" } }) %>
+        </div>
+
+        <div class="col-4">
+          <%= form.input(:cpf, input_html: { data: { mask: "cpf" } }) %>
+        </div>
+
+        <div class="col-4">
+          <%= form.input(:born_in, html5: true) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h4 class="m-0"><%= tm(Address) %></h4>
+    </div>
+
+    <div class="card-body">
+      <%= form.simple_fields_for(:address) do |fa| %>
+        <%= render("addresses/form", form: fa) %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render("shared/form/actions", record: citizen, back_url: citizens_path) %>
+<% end %>

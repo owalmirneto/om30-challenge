@@ -1,0 +1,36 @@
+<%= render("shared/page_title/index", page_title: t(".title"), link: new_citizen_path) %>
+
+<% if @citizens.blank? %>
+  <%= render("shared/alerts/warning", message: t(".not_found")) %>
+<% else %>
+  <table class="table table-sm table-hover table-bordered rounded-5">
+    <thead class="table-light">
+      <tr>
+        <th scope="col"><%= ta(Citizen, :name) %></th>
+        <th scope="col"><%= ta(Citizen, :email) %></th>
+        <th scope="col"><%= ta(Citizen, :cpf) %></th>
+        <th scope="col"><%= ta(Citizen, :cns) %></th>
+        <th scope="col"><%= ta(Citizen, :enabled) %></th>
+        <th width="70"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @citizens.each do |citizen| %>
+        <tr id="<%= dom_id(citizen) %>">
+          <td><%= citizen.name %></td>
+          <td><%= citizen.email %></td>
+          <td><%= citizen.cpf %></td>
+          <td><%= citizen.cns %></td>
+          <td class="text-center">
+            <%= tbi(citizen.enabled?) %>
+          </td>
+          <td class="text-center">
+            <%= render("shared/link_to/edit", record: citizen) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= render("shared/pagination/links", collection: @citizens) %>
+<% end %>

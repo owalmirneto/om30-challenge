@@ -1,0 +1,9 @@
+<div class="mt-2 text-end">
+  <%= link_to(back_url, class: "btn btn-outline-secondary") do %>
+    <%= t(".back_link") %>
+  <% end %>
+
+  <%= button_tag(nil, class: "btn btn-primary") do %>
+    <%= tmb(record.class, record.new_record? ? :create : :update) %>
+  <% end %>
+</div>

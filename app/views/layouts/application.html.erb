@@ -17,6 +17,8 @@
 
     <main id="app" class="flex-grow-1 mt-3">
       <div class="container">
+        <%= render("shared/alerts/success", message: notice) if notice.present? %>
+
         <%= yield %>
       </div>
     </main>

@@ -26,6 +26,13 @@ Metrics/BlockLength:
     - config/routes.rb
     - config/initializers/form_ease_bootstrap.rb
 
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/**/*
+
+RSpec/Rails/NegationBeValid:
+  EnforcedStyle: be_invalid
+
 RSpec/PendingWithoutReason:
   Enabled: false
 
