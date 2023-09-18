@@ -80,3 +80,5 @@ gem "cns_brazil", github: "owalmirneto/cns_brazil"
 gem "enuminator", "~> 0.0.3"
 # https://github.com/collectiveidea/interactor-rails#usage
 gem "interactor-rails", "~> 2.2"
+# https://github.com/owalmirneto/queries#usage
+gem "ows-queries", "~> 0.1.6"
