@@ -82,3 +82,5 @@ gem "enuminator", "~> 0.0.3"
 gem "interactor-rails", "~> 2.2"
 # https://github.com/owalmirneto/queries#usage
 gem "ows-queries", "~> 0.1.6"
+# https://github.com/rails-api/active_model_serializers/tree/0-10-stable#getting-started
+gem "active_model_serializers", "~> 0.10.13"
