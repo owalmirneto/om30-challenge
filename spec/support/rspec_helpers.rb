@@ -10,6 +10,16 @@ module RSpecHelpers
     @helpers ||= ApplicationController.helpers
   end
   alias h helpers
+
+  def json_body
+    return if response.body.blank?
+
+    @json_body ||= JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def random_uuid
+    SecureRandom.uuid
+  end
 end
 
 RSpec.configure do |config|

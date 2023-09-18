@@ -4,5 +4,14 @@
 
 import { application } from "./application"
 
+import AddressesController from "./addresses_controller"
+application.register("addresses", AddressesController)
+
+import CitizensController from "./citizens_controller"
+application.register("citizens", CitizensController)
+
 import HomeController from "./home_controller"
 application.register("home", HomeController)
+
+import MasksController from "./masks_controller"
+application.register("masks", MasksController)

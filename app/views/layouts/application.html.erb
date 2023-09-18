@@ -13,10 +13,11 @@
   </head>
 
   <body class="min-vh-100 d-flex flex-column">
+    <%= render("layouts/loading") %>
     <%= render("layouts/navbar") %>
 
     <main id="app" class="flex-grow-1 mt-3">
-      <div class="container">
+      <div class="container" data-controller="masks">
         <%= render("shared/alerts/success", message: notice) if notice.present? %>
 
         <%= yield %>

@@ -80,27 +80,4 @@ module TranslationHelper
     model.human_attribute_name(attribute, count:)
   end
   alias ta translate_model_attribute
-
-  ##
-  # Public: Translate a boolean attribute in an icon.
-  #
-  # value: TrueClass or FalseClass.
-  #
-  # Examples
-  #
-  #   <%= tbi(true) %>
-  #   # => '<i class="fa fa-check text-success"></i>'
-  #
-  #   <%= tbi(false) %>
-  #   # => '<i class="fa fa-times text-danger"></i>'
-  #
-  # Returns translated boolean's attribute in an icon.
-  def translate_boolean_in_icon(value)
-    if value
-      content_tag(:span, "✓", class: "text-success")
-    else
-      content_tag(:span, "×", class: "text-danger")
-    end
-  end
-  alias tbi translate_boolean_in_icon
 end

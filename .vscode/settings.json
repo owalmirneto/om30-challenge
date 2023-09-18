@@ -2,9 +2,11 @@
   "cSpell.words": [
     "activerecord",
     "cloudflare",
+    "csrf",
     "erblint",
     "gemfile",
     "initializers",
+    "inputmask",
     "isready",
     "reviewdog",
     "rubocop"

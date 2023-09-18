@@ -1,4 +1,6 @@
 <div class="address-wrapper" data-controller="addresses">
+  <%= form.hidden_field(:ibge, class: "ibge") %>
+
   <div class="row">
     <div class="col-sm-3">
       <%= form.input(:zip_code, input_html: { data: { mask: "cep", action: "keyup->addresses#find" } }) %>
@@ -20,12 +22,14 @@
 
     <div class="col-sm-4">
       <%= form.input(:city,
+                     input_html: { class: "city bg-body-secondary" },
                      placeholder: ta(Address, :city_placeholder)) %>
     </div>
 
     <div class="col-sm-4">
       <%= form.input(:state,
                      collection: AddressStates.to_a,
+                     input_html: { class: "state bg-body-secondary" },
                      include_blank: ta(Address, :state_placeholder)) %>
     </div>
   </div>

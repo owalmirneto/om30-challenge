@@ -51,6 +51,6 @@ class CitizensController < ApplicationController
   end
 
   def address_attributes
-    [:id, :zip_code, :street_name, :building_number, :neighborhood, :city, :state]
+    [:id, :zip_code, :street_name, :building_number, :neighborhood, :city, :state, :ibge]
   end
 end
