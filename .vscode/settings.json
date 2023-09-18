@@ -2,6 +2,7 @@
   "cSpell.words": [
     "activerecord",
     "cloudflare",
+    "csrf",
     "erblint",
     "gemfile",
     "initializers",

@@ -16,6 +16,10 @@ module RSpecHelpers
 
     @json_body ||= JSON.parse(response.body, symbolize_names: true)
   end
+
+  def random_uuid
+    SecureRandom.uuid
+  end
 end
 
 RSpec.configure do |config|

@@ -14,7 +14,7 @@
         <th width="70"></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody data-controller="citizens">
       <% @citizens.each do |citizen| %>
         <tr id="<%= dom_id(citizen) %>">
           <td><%= citizen.name %></td>
@@ -22,7 +22,11 @@
           <td><%= citizen.cpf %></td>
           <td><%= citizen.cns %></td>
           <td class="text-center">
-            <%= tbi(citizen.enabled?) %>
+            <div class="form-check form-switch">
+              <%= check_box_tag(:enabled, citizen.id, citizen.enabled?,
+                                data: { action: "change->citizens#toggleStatus" },
+                                class: "form-check-input") %>
+            </div>
           </td>
           <td class="text-center">
             <%= render("shared/link_to/edit", record: citizen) %>
