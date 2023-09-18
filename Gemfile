@@ -76,3 +76,5 @@ end
 gem "form_ease", "~> 0.0.3"
 # https://github.com/owalmirneto/cns_brazil#usage
 gem "cns_brazil", github: "owalmirneto/cns_brazil"
+# https://github.com/owalmirneto/enuminator#using-with-rails
+gem "enuminator", "~> 0.0.3"
