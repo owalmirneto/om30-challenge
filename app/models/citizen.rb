@@ -7,4 +7,8 @@ class Citizen < ApplicationRecord
   validates :email, presence: true
   validates :born_in, presence: true
   validates :phone, presence: true
+
+  has_one :address, as: :addressable, dependent: :nullify
+
+  accepts_nested_attributes_for :address
 end

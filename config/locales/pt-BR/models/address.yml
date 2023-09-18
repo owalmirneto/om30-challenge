@@ -1,0 +1,21 @@
+pt-BR:
+  activerecord:
+    models:
+      address:
+        one: "Endereço"
+        other: "Endereços"
+    attributes:
+      address:
+        addressable: "Dono"
+        addressable_id: "Dono"
+        addressable_type: "Tipo de dono"
+        main: "Principal"
+        zip_code: "CEP"
+        street_name: "Logradouro"
+        building_number: "Número"
+        neighborhood: "Bairro"
+        city: "Cidade"
+        city_placeholder: "Selecione uma cidade"
+        state: "Estado"
+        state_placeholder: "Selecione um estado"
+        ibge: "IBGE"
