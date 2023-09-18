@@ -1,0 +1,32 @@
+<div class="address-wrapper" data-controller="addresses">
+  <div class="row">
+    <div class="col-sm-3">
+      <%= form.input(:zip_code, input_html: { data: { mask: "cep", action: "keyup->addresses#find" } }) %>
+    </div>
+
+    <div class="col-sm-5">
+      <%= form.input(:street_name, input_html: { class: "street-name" }) %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= form.input(:building_number, required: true) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <%= form.input(:neighborhood, input_html: { class: "neighborhood" }) %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= form.input(:city,
+                     placeholder: ta(Address, :city_placeholder)) %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= form.input(:state,
+                     collection: AddressStates.to_a,
+                     include_blank: ta(Address, :state_placeholder)) %>
+    </div>
+  </div>
+</div>

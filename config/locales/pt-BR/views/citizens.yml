@@ -1,0 +1,15 @@
+pt-BR:
+  citizens:
+    index:
+      title: "Lista de munícipes"
+      not_found: "Munícipe não encontrado"
+    form:
+      info: "Dados pessoais"
+    new:
+      title: "Criar munícipe"
+    edit:
+      title: "Editar munícipe"
+    create:
+      success: "Munícipe criado com sucesso"
+    update:
+      success: "Munícipe alterado com sucesso"
