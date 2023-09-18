@@ -78,3 +78,5 @@ gem "form_ease", "~> 0.0.3"
 gem "cns_brazil", github: "owalmirneto/cns_brazil"
 # https://github.com/owalmirneto/enuminator#using-with-rails
 gem "enuminator", "~> 0.0.3"
+# https://github.com/collectiveidea/interactor-rails#usage
+gem "interactor-rails", "~> 2.2"
