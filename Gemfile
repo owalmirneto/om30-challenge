@@ -70,6 +70,8 @@ group :test do
   gem "simplecov-json", "~> 0.2.3"
   # https://github.com/dashingrocket/simplecov-cobertura#usage
   gem "simplecov-cobertura", "~> 2.1"
+  # https://github.com/bblimke/webmock#rspec
+  gem "webmock", "~> 3.19"
 end
 
 # http://github.com/owalmirneto/form_ease
