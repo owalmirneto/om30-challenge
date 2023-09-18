@@ -1,0 +1,11 @@
+pt-BR:
+  shared:
+    form:
+      actions:
+        back_link: "Voltar"
+    page_title:
+      index:
+        create: "Criar"
+    link_to:
+      edit:
+        label: "Editar"
