@@ -5,7 +5,7 @@ describe "Listing citizens" do
     before do
       visit(root_path)
 
-      within("header#menu") { click_on(h.tmp(Citizen)) }
+      within("header#menu") { click_link(h.tmp(Citizen)) }
     end
 
     it { expect(page).to have_http_status(:success) }

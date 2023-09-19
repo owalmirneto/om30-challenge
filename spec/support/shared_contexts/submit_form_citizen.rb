@@ -17,6 +17,6 @@ shared_context "when submit form citizen" do |button_type|
 
     find("#citizen_address_attributes_state option[value='#{address_attributes[:state]}']").select_option
 
-    click_on(h.tmb(Citizen, button_type))
+    click_button(h.tmb(Citizen, button_type))
   end
 end
