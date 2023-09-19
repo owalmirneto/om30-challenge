@@ -1,0 +1,4 @@
+pt-BR:
+  citizens_mailer:
+    notify:
+      subject: "Seus dados foram salvo em nosso sistema"
