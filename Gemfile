@@ -57,8 +57,6 @@ group :development, :test do
   gem "cpf_faker", "~> 1.3"
   # https://github.com/thoughtbot/shoulda-matchers
   gem "shoulda-matchers", "~> 5.3"
-  # https://github.com/wspurgin/rspec-sidekiq#configuration
-  gem "rspec-sidekiq", "~> 4.0"
 end
 
 group :test do
@@ -74,6 +72,8 @@ group :test do
   gem "simplecov-cobertura", "~> 2.1"
   # https://github.com/bblimke/webmock#rspec
   gem "webmock", "~> 3.19"
+  # https://github.com/wspurgin/rspec-sidekiq#configuration
+  gem "rspec-sidekiq", "~> 4.0"
 end
 
 group :development do
