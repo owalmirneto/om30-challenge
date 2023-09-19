@@ -57,6 +57,8 @@ group :development, :test do
   gem "cpf_faker", "~> 1.3"
   # https://github.com/thoughtbot/shoulda-matchers
   gem "shoulda-matchers", "~> 5.3"
+  # https://github.com/wspurgin/rspec-sidekiq#configuration
+  gem "rspec-sidekiq", "~> 4.0"
 end
 
 group :test do
@@ -93,3 +95,5 @@ gem "ows-queries", "~> 0.1.6"
 gem "active_model_serializers", "~> 0.10.13"
 # https://github.com/sidekiq/sidekiq/wiki/Getting-Started
 gem "sidekiq", "~> 7.1"
+# https://github.com/leodcs/zenvia-rest-rails
+gem "zenvia-rest-rails", github: "leodcs/zenvia-rest-rails", require: "zenvia"

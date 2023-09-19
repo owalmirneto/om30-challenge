@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 describe "Create citizen" do
+  include_context "when using Zenvia"
   include_context "when visit create citizen form"
 
   it { expect(page).to have_http_status(:success) }

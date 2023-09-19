@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/leodcs/zenvia-rest-rails.git
+  revision: 1e415c21b4476c5654cca04c97d233ceb691a3ba
+  specs:
+    zenvia-rest-rails (0.2.5)
+
+GIT
   remote: https://github.com/owalmirneto/cns_brazil.git
   revision: 3e5d5e87747c35dd5803f3c2ab5d9e39e6df938a
   specs:
@@ -300,6 +306,11 @@ GEM
       rspec-expectations (~> 3.12)
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
+    rspec-sidekiq (4.0.2)
+      rspec-core (~> 3.0)
+      rspec-expectations (~> 3.0)
+      rspec-mocks (~> 3.0)
+      sidekiq (>= 5, < 8)
     rspec-support (3.12.1)
     rubocop (1.56.3)
       base64 (~> 0.1.1)
@@ -423,6 +434,7 @@ DEPENDENCIES
   rails (~> 7.0.8)
   rails-i18n (~> 7.0)
   rspec-rails (~> 6.0)
+  rspec-sidekiq (~> 4.0)
   rubocop-capybara (~> 2.18)
   rubocop-factory_bot (~> 2.23)
   rubocop-performance (~> 1.19)
@@ -437,6 +449,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   webmock (~> 3.19)
+  zenvia-rest-rails!
 
 RUBY VERSION
    ruby 3.2.2p53
