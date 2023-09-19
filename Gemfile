@@ -97,3 +97,5 @@ gem "active_model_serializers", "~> 0.10.13"
 gem "sidekiq", "~> 7.1"
 # https://github.com/leodcs/zenvia-rest-rails
 gem "zenvia-rest-rails", github: "leodcs/zenvia-rest-rails", require: "zenvia"
+
+gem "selenium-webdriver", "~> 4.12"
