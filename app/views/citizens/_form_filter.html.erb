@@ -1,0 +1,24 @@
+<%= simple_form_for("",
+                    url: citizens_path,
+                    method: :get,
+                    data: {
+                      turbo_frame: "citizens",
+                      controller: "search",
+                      action: "change->search#perform"
+                    },
+                    class: "m-0") do |form| %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="input-group">
+        <%= form.text_field :term, value: params[:term],
+                                   class: "form-control",
+                                   data: { action: "keyup->search#perform" },
+                                   placeholder: "Buscar por..." %>
+
+        <button class="btn btn-primary" type="submit">
+          <i class="bi bi-search"></i> Buscar
+        </button>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -15,3 +15,6 @@ application.register("home", HomeController)
 
 import MasksController from "./masks_controller"
 application.register("masks", MasksController)
+
+import SearchController from "./search_controller"
+application.register("search", SearchController)

@@ -15,7 +15,7 @@ describe "Create citizen" do
   end
 
   context "when submit invalid form" do
-    before { click_on(h.tmb(Citizen, :create)) }
+    before { click_button(h.tmb(Citizen, :create)) }
 
     it "count errors messages" do
       expect(page).to have_css("form.new_citizen .invalid-feedback", count: 11)
