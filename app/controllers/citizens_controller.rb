@@ -2,7 +2,9 @@
 
 class CitizensController < ApplicationController
   def index
-    @citizens = query.paginate(params[:page])
+    @citizens = query.search(params[:term]).paginate(params[:page])
+
+    render(render_index_options)
   end
 
   def new
@@ -39,6 +41,12 @@ class CitizensController < ApplicationController
 
   def query
     @query ||= CitizensQuery.new
+  end
+
+  def render_index_options
+    return :index unless turbo_frame_request?
+
+    { partial: "citizens/citizens_table" }
   end
 
   def citizen_params
