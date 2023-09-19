@@ -57,6 +57,8 @@ group :development, :test do
   gem "cpf_faker", "~> 1.3"
   # https://github.com/thoughtbot/shoulda-matchers
   gem "shoulda-matchers", "~> 5.3"
+  # https://github.com/wspurgin/rspec-sidekiq#configuration
+  gem "rspec-sidekiq", "~> 4.0"
 end
 
 group :test do
@@ -74,6 +76,11 @@ group :test do
   gem "webmock", "~> 3.19"
 end
 
+group :development do
+  # https://github.com/kirillplatonov/hotwire-livereload
+  gem "hotwire-livereload", "~> 1.2"
+end
+
 # http://github.com/owalmirneto/form_ease
 gem "form_ease", "~> 0.0.3"
 # https://github.com/owalmirneto/cns_brazil#usage
@@ -86,3 +93,7 @@ gem "interactor-rails", "~> 2.2"
 gem "ows-queries", "~> 0.1.6"
 # https://github.com/rails-api/active_model_serializers/tree/0-10-stable#getting-started
 gem "active_model_serializers", "~> 0.10.13"
+# https://github.com/sidekiq/sidekiq/wiki/Getting-Started
+gem "sidekiq", "~> 7.1"
+# https://github.com/leodcs/zenvia-rest-rails
+gem "zenvia-rest-rails", github: "leodcs/zenvia-rest-rails", require: "zenvia"

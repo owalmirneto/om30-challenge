@@ -2,6 +2,6 @@
 
 module Citizens
   class Save < ApplicationOrganizer
-    organize(FindOrNew, Persist)
+    organize(FindOrNew, Persist, SendNotifyEmail, SendNotifySMS)
   end
 end

@@ -63,7 +63,7 @@ Email para dúvidas: desenvolvimento@om30.com.br
 
 ## Solution
 
-This application was implemented using Ruby on Rails and PostgreSQL.
+This application was implemented using Ruby on Rails with PostgreSQL and SideKiq with Redis for delayed jobs.
 
 ### Requirements
 
@@ -86,7 +86,7 @@ make setup
 
 ### Start application
 
-To starting the application, we need to start services with docker-compose in daemon. So, this will start all services include web application
+To starting the application, we need to start services with docker-compose in daemon. So, this will start all services all services (PostgresSQL and Redis) include web application and worker (Rails and SideKiq)
 
 ```bash
 make up
