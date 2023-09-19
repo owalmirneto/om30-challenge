@@ -9,11 +9,11 @@ up:
 	docker-compose up -d;
 
 start:
-	docker-compose up postgres redis sidekiq -d;
+	docker-compose up postgres redis sidekiq mailcatcher -d;
 	bin/dev;
 
 server:
-	docker-compose up postgres redis sidekiq -d;
+	docker-compose up postgres redis sidekiq mailcatcher -d;
 	bin/rails server;
 
 dbreseed:

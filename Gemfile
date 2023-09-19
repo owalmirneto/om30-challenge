@@ -74,6 +74,11 @@ group :test do
   gem "webmock", "~> 3.19"
 end
 
+group :development do
+  # https://github.com/kirillplatonov/hotwire-livereload
+  gem "hotwire-livereload", "~> 1.2"
+end
+
 # http://github.com/owalmirneto/form_ease
 gem "form_ease", "~> 0.0.3"
 # https://github.com/owalmirneto/cns_brazil#usage

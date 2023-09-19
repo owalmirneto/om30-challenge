@@ -5,6 +5,7 @@
     "csrf",
     "erblint",
     "gemfile",
+    "hotwire",
     "initializers",
     "inputmask",
     "isready",
