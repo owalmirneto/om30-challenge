@@ -373,7 +373,7 @@ SimpleForm.setup do |config|
     check_boxes: :vertical_collection,
     date: :floating_labels_form,
     datetime: :vertical_multi_select,
-    file: :vertical_file,
+    file: :floating_labels_form,
     radio_buttons: :vertical_collection,
     range: :vertical_range,
     time: :vertical_multi_select,
