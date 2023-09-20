@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
 CarrierWave.configure do |config|
-  carrierwave_store = ENV.fetch("CARRIER_WAVE_STORAGE").to_sym
-
   config.asset_host = ActionMailer::Base.asset_host
-  config.storage = carrierwave_store
+  config.storage = ENV.fetch("CARRIER_WAVE_STORAGE").to_sym
   config.cache_dir = Rails.public_path.join("uploads/tmp")
   config.fog_public = true
 
-  if carrierwave_store == :fog
+  if config.storage == :fog
     config.fog_credentials = {
       provider: "AWS",
       aws_access_key_id: ENV.fetch("AWS_S3_ACCESS_KEY_ID"),

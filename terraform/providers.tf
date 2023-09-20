@@ -1,5 +1,10 @@
 terraform {
   required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+
     cloudflare = {
       source  = "cloudflare/cloudflare"
       version = "~> 3.0"
@@ -9,8 +14,13 @@ terraform {
   backend "pg" {}
 }
 
+provider "aws" {
+  region  = local.aws_region
+  profile = local.aws_profile
+}
+
 variable "cloudflare_api_token" {
-  type = string
+  type      = string
   sensitive = true
 }
 
