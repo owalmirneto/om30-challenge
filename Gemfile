@@ -105,3 +105,5 @@ gem "carrierwave", "~> 3.0"
 gem "aws-sdk-s3", "~> 1.134", ">= 1.119.1"
 # https://github.com/fog/fog-aws#usage
 gem "fog-aws", "~> 3.19"
+# https://github.com/minimagick/minimagick#usage
+gem "mini_magick", "~> 4.12"
