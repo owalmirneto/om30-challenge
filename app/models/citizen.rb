@@ -2,7 +2,7 @@
 
 class Citizen < ApplicationRecord
   validates :name, presence: true
-  validates :cpf, presence: true
+  validates :cpf, presence: true, cpf: true
   validates :cns, presence: true, "CnsBrazil::Cns": true
   validates :email, presence: true
   validates :born_in, presence: true

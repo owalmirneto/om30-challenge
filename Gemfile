@@ -107,3 +107,5 @@ gem "aws-sdk-s3", "~> 1.134", ">= 1.119.1"
 gem "fog-aws", "~> 3.19"
 # https://github.com/minimagick/minimagick#usage
 gem "mini_magick", "~> 4.12"
+# https://github.com/fnando/cpf_cnpj#usage
+gem "cpf_cnpj", "~> 0.5.0"
