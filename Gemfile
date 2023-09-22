@@ -109,3 +109,5 @@ gem "fog-aws", "~> 3.19"
 gem "mini_magick", "~> 4.12"
 # https://github.com/fnando/cpf_cnpj#usage
 gem "cpf_cnpj", "~> 0.5.0"
+# https://github.com/K-and-R/email_validator#usage
+gem "email_validator", "~> 2.2"
