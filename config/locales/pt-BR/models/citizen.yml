@@ -14,3 +14,9 @@ pt-BR:
         phone: "Telefone"
         enabled: "Ativo?"
         photo: "Foto"
+    errors:
+      models:
+        citizen:
+          attributes:
+            born_in:
+              before_today: "deve ser a data de nascimento"

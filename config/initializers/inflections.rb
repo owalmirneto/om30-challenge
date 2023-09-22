@@ -16,5 +16,6 @@
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.acronym "API"
   inflect.acronym "CEP"
+  inflect.acronym "CPF"
   inflect.acronym "SMS"
 end

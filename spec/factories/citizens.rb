@@ -7,7 +7,7 @@ FactoryBot.define do
     cns { CnsBrazil::Cns.generate }
     email { Faker::Internet.email }
     born_in { Faker::Date.birthday.to_s }
-    phone { Faker::PhoneNumber.phone_number }
+    phone { Faker::PhoneNumber.cell_phone }
     enabled { Faker::Boolean.boolean }
 
     trait :blank do
