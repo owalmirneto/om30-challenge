@@ -5,6 +5,7 @@
     <table class="table table-sm table-hover table-bordered rounded-5">
       <thead class="table-light">
         <tr>
+          <th scope="col"><%= ta(Citizen, :photo) %></th>
           <th scope="col"><%= ta(Citizen, :name) %></th>
           <th scope="col"><%= ta(Citizen, :email) %></th>
           <th scope="col"><%= ta(Citizen, :cpf) %></th>
@@ -16,6 +17,11 @@
       <tbody data-controller="citizens">
         <% @citizens.each do |citizen| %>
           <tr id="<%= dom_id(citizen) %>">
+            <td class="text-center">
+              <% if citizen.photo.present? %>
+                <%= image_tag(citizen.photo.thumb.url, class: "rounded") %>
+              <% end %>
+            </td>
             <td><%= citizen.name %></td>
             <td><%= citizen.email %></td>
             <td><%= citizen.cpf %></td>

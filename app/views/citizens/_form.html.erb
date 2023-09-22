@@ -5,8 +5,26 @@
     </div>
 
     <div class="card-body">
-      <%= form.input(:name) %>
+      <div class="row">
+        <div class="col-8">
+          <%= form.input(:name) %>
+        </div>
 
+        <div class="col-4">
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <%= form.file_field(:photo, class: "form-control") %>
+              <%= form.label(:photo) %>
+            </div>
+
+            <% if citizen.photo.present? %>
+              <span class="input-group-text">
+                <%= image_tag(citizen.photo.thumb.url, class: "rounded") %>
+              </span>
+            <% end %>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-6"><%= form.input(:email) %></div>
 

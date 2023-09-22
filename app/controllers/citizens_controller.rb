@@ -55,7 +55,7 @@ class CitizensController < ApplicationController
   end
 
   def citizen_attributes
-    [:name, :email, :phone, :cns, :cpf, :born_in]
+    [:name, :email, :phone, :cns, :cpf, :born_in, :photo]
   end
 
   def address_attributes

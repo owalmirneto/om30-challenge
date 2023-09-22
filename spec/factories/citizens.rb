@@ -18,6 +18,7 @@ FactoryBot.define do
       born_in { nil }
       phone { nil }
       enabled { nil }
+      photo { nil }
     end
 
     trait :enabled do
@@ -28,8 +29,13 @@ FactoryBot.define do
       enabled { false }
     end
 
+    trait :with_photo do
+      photo { Rack::Test::UploadedFile.new(File.open(Rails.root.join("spec/factories/citizen-photo.png").to_s)) }
+    end
+
     factory :blank_citizen, traits: [:blank]
     factory :enabled_citizen, traits: [:enabled]
     factory :disabled_citizen, traits: [:disabled]
+    factory :citizen_with_photo, traits: [:with_photo]
   end
 end

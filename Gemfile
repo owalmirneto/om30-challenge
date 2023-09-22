@@ -74,6 +74,8 @@ group :test do
   gem "webmock", "~> 3.19"
   # https://github.com/wspurgin/rspec-sidekiq#configuration
   gem "rspec-sidekiq", "~> 4.0"
+  # https://github.com/SeleniumHQ/selenium/wiki/Ruby-Bindings
+  gem "selenium-webdriver", "~> 4.12"
 end
 
 group :development do
@@ -97,5 +99,11 @@ gem "active_model_serializers", "~> 0.10.13"
 gem "sidekiq", "~> 7.1"
 # https://github.com/leodcs/zenvia-rest-rails
 gem "zenvia-rest-rails", github: "leodcs/zenvia-rest-rails", require: "zenvia"
-
-gem "selenium-webdriver", "~> 4.12"
+# https://github.com/carrierwaveuploader/carrierwave#getting-started
+gem "carrierwave", "~> 3.0"
+# https://github.com/aws/aws-sdk-ruby#installation
+gem "aws-sdk-s3", "~> 1.134", ">= 1.119.1"
+# https://github.com/fog/fog-aws#usage
+gem "fog-aws", "~> 3.19"
+# https://github.com/minimagick/minimagick#usage
+gem "mini_magick", "~> 4.12"
