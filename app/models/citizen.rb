@@ -6,7 +6,7 @@ class Citizen < ApplicationRecord
   validates :cns, presence: true, "CnsBrazil::Cns": true
   validates :email, presence: true, email: true
   validates :born_in, presence: true
-  validates :phone, presence: true
+  validates :phone, presence: true, phone: true
 
   has_one :address, as: :addressable, dependent: :nullify
 
