@@ -43,7 +43,7 @@
         </div>
 
         <div class="col-4">
-          <%= form.input(:born_in, html5: true) %>
+          <%= form.input(:born_in, html5: true, input_html: { max: Date.yesterday }) %>
         </div>
       </div>
     </div>
